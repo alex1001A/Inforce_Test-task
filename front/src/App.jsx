@@ -18,13 +18,15 @@ export default function App() {
   };
 
   const handleSave = (dataObject) => {
-    
-    const updatedArray = [...dataArray, dataObject].sort((a, b) => a.productName.localeCompare(b.productName));    setDataArray(updatedArray);
+    const updatedArray = [...dataArray, dataObject].sort((a, b) => a.productName.localeCompare(b.productName));   
+     
+    setDataArray(updatedArray);
     localStorage.setItem('data', JSON.stringify(updatedArray));
   };
 
   const handleDelete = (index) => {
     const updatedArray = [...dataArray];
+
     updatedArray.splice(index, 1); 
     setDataArray(updatedArray);
     localStorage.setItem('data', JSON.stringify(updatedArray));

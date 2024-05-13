@@ -15,7 +15,10 @@ export default function Modal({ onClose, onSave }) {
             return;
         }
 
+        // todo validation the same id
+
         const dataObject = { id, productName, productCount, productWidth, productHeight, productWeight, imageURL };
+        
         onSave(dataObject); 
         setImageURL('')
         setId('')
@@ -53,28 +56,28 @@ export default function Modal({ onClose, onSave }) {
             <input
                 value={productCount}
                 className="modal__count modal-input"
-                type="text"
+                type="number"
                 placeholder="Type count of products..."
                 onChange={(e) => setProductCount(e.target.value)}
             />
             <input
                 value={productWidth}
                 className="modal__weight modal-input"
-                type="text"
+                type="number"
                 placeholder="Type product weight..."
                 onChange={(e) => setProductWidth(e.target.value)}
             />
             <input
                 value={productHeight}
                 className="modal__h modal-input"
-                type="text"
+                type="number"
                 placeholder="Type product height..."
                 onChange={(e) => setProductHeight(e.target.value)}
             />
             <input
                 value={productWeight}
                 className="modal__w modal-input"
-                type="text"
+                type="number"
                 placeholder="Type product width..."
                 onChange={(e) => setProductWeight(e.target.value)}
             />
